@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Giant Electronics Hub Store Printing And Signage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .step-indicator {
+            transition: all 0.3s ease;
+        }
+        .step-indicator.active {
+            color: #F48E2E; /* secondary */
+            font-weight: 700;
+        }
+        .step-indicator.completed {
+            color: #2D324A; /* primary */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2D324A', // Dark blue/grey
+                        'secondary': '#F48E2E', // Orange
+                        'text-dark': '#212529',
+                    },
+                    borderRadius: {
+                        'xl': '0.75rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-text-dark antialiased">
+    
+    <header class="bg-white shadow-lg sticky top-0 z-20">
+        <div class="container mx-auto px-4 py-4 flex justify-center items-center max-w-7xl">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="logo.jpg" alt="Logo" class="h-8">
+                <span class="text-primary text-xl font-extrabold tracking-tight">Giant Electronics Hub Store CHECKOUT</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-7xl">
+        <h1 class="text-3xl font-extrabold mb-8 text-primary text-center">Finalize Your Order</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+                
+                <nav class="flex justify-between items-center mb-10 text-gray-500 font-medium border-b pb-4" aria-label="Checkout steps">
+                    <span id="step-1-indicator" class="step-indicator active">1. Information</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                    <span id="step-2-indicator" class="step-indicator">2. Shipping</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                    <span id="step-3-indicator" class="step-indicator">3. Payment</span>
+                </nav>
+
+                <form id="checkout-form" onsubmit="return false;">
+                    
+                    <div id="step-1" class="step-content">
+                        <h2 class="text-2xl font-bold mb-6 text-primary">Contact & Shipping Details</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="md:col-span-2">
+                                <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <h3 class="font-semibold text-lg mt-4 mb-2">Shipping Address</h3>
+                            </div>
+                            
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium mb-1">First Name</label>
+                                <input type="text" id="first-name" name="first-name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+                            
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium mb-1">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label for="address" class="block text-sm font-medium mb-1">Street Address</label>
+                                <input type="text" id="address" name="address" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+                            
+                            <div>
+                                <label for="city" class="block text-sm font-medium mb-1">City</label>
+                                <input type="text" id="city" name="city" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+                            
+                            <div>
+                                <label for="province" class="block text-sm font-medium mb-1">Province (e.g., Gauteng)</label>
+                                <select id="province" name="province" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                                    <option value="">Select Province</option>
+                                    <option value="GP">Gauteng</option>
+                                    <option value="WC">Western Cape</option>
+                                    <option option value="KZN">KwaZulu-Natal</option>
+                                    <option value="EC">Eastern Cape</option>
+                                    <option value="LP">Limpopo</option>
+                                    <option value="MP">Mpumalanga</option>
+                                    <option value="NC">Northern Cape</option>
+                                    <option value="NW">North West</option>
+                                    <option value="FS">Free State</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="zip" class="block text-sm font-medium mb-1">Postal Code</label>
+                                <input type="text" id="zip" name="zip" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-end mt-8">
+                            <button type="button" onclick="nextStep(2)" class="bg-secondary text-white py-3 px-8 rounded-full font-bold hover:bg-secondary/90 transition duration-200">
+                                Continue to Shipping
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="step-2" class="step-content hidden">
+    <h2 class="text-2xl font-bold mb-6 text-primary">Shipping Method</h2>
+    <div class="space-y-4">
+        
+        <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+            <input type="radio" name="shipping-method" value="standard" data-cost="150.00" checked class="accent-primary mr-3">
+            <span class="font-semibold">Standard Delivery (3-5 days) - R150</span>
+            <span class="float-right font-bold text-secondary" id="standard-shipping-price">R150.00</span> 
+            <p class="text-sm text-gray-500 mt-1">Via local courier partners. FREE for orders over R5000.</p>
+        </label>
+        
+        <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+            <input type="radio" name="shipping-method" value="courier-guy" data-cost="280.00" class="accent-primary mr-3">
+            <span class="font-semibold">The Courier Guy (Overnight/Express)</span>
+            <span class="float-right font-bold text-secondary">R280.00</span>
+            <p class="text-sm text-gray-500 mt-1">1-2 business day delivery guarantee to major centers.</p>
+        </label>
+
+        <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+            <input type="radio" name="shipping-method" value="pudo" data-cost="99.00" class="accent-primary mr-3">
+            <span class="font-semibold">Pudo Locker to Door</span>
+            <span class="float-right font-bold text-secondary">R99.00</span>
+            <p class="text-sm text-gray-500 mt-1">Collection from a Pudo Locker near you (2-3 days). Cheapest rate.</p>
+        </label>
+
+        <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+            <input type="radio" name="shipping-method" value="pickup" data-cost="0.00" class="accent-primary mr-3">
+            <span class="font-semibold">Local Pickup</span>
+            <span class="float-right font-bold text-secondary">FREE</span>
+            <p class="text-sm text-gray-500 mt-1">Collect from our designated warehouse/office (e.g., Midrand).</p>
+        </label>
+        
+    </div>
+
+    <div class="flex justify-between mt-8">
+        <button type="button" onclick="prevStep(1)" class="text-primary hover:text-secondary transition duration-200 flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Return to Information</span>
+        </button>
+        <button type="button" onclick="nextStep(3)" class="bg-secondary text-white py-3 px-8 rounded-full font-bold hover:bg-secondary/90 transition duration-200">
+            Continue to Payment
+        </button>
+    </div>
+</div>
+
+                    <div id="step-3" class="step-content hidden">
+                        <h2 class="text-2xl font-bold mb-6 text-primary">Payment Information</h2>
+                        
+                        <div class="space-y-4">
+                            
+                            <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+                                <input type="radio" name="payment-method" value="card" checked class="accent-primary mr-3">
+                                <span class="font-semibold">Credit/Debit Card (PayGate)</span>
+                                <i class="fa-solid fa-credit-card float-right text-xl text-primary"></i>
+                                <div id="card-details-fields" class="mt-4 space-y-3">
+                                    <input type="text" placeholder="Card Number" class="w-full p-3 border border-gray-300 rounded-lg">
+                                    <div class="grid grid-cols-3 gap-3">
+                                        <input type="text" placeholder="MM/YY" class="col-span-1 p-3 border border-gray-300 rounded-lg">
+                                        <input type="text" placeholder="CVC" class="col-span-2 p-3 border border-gray-300 rounded-lg">
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+                                <input type="radio" name="payment-method" value="eft" class="accent-primary mr-3">
+                                <span class="font-semibold">EFT/Bank Transfer (Manual)</span>
+                                <i class="fa-solid fa-building-columns float-right text-xl text-primary"></i>
+                                <p class="text-sm text-gray-500 mt-2">Instructions will be sent via email after placing the order.</p>
+                            </label>
+                            
+                            <label class="block border border-gray-300 rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition duration-200 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+                                <input type="radio" name="payment-method" value="payfast" class="accent-primary mr-3">
+                                <span class="font-semibold">PayFast (Secure Online Payment)</span>
+                                <img src="payfast-logo.png" alt="PayFast Logo" class="h-5 inline float-right">
+                            </label>
+                            
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-gray-50 rounded-lg text-sm text-gray-600 border border-gray-200">
+                            By clicking "Place Order", you agree to our <a href="/terms" class="text-secondary hover:underline">Terms and Conditions</a>.
+                        </div>
+
+                        <div class="flex justify-between mt-8">
+                            <button type="button" onclick="prevStep(2)" class="text-primary hover:text-secondary transition duration-200 flex items-center space-x-2">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span>Return to Shipping</span>
+                            </button>
+                            <button type="submit" onclick="placeOrder()" class="bg-primary text-white py-3 px-8 rounded-full font-bold hover:bg-primary/90 transition duration-200 uppercase text-lg">
+                                <span id="final-total">0.00</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            
+            <aside class="lg:col-span-1 h-fit">
+                <div class="bg-white p-6 rounded-xl shadow-lg sticky top-28 border border-gray-100">
+                    <h2 class="text-2xl font-bold mb-6 text-primary border-b pb-3">Order Summary</h2>
+                    
+                    <div id="summary-items-container" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+                        </div>
+                    
+                    <a href="shop.html" class="text-sm text-secondary hover:underline mt-4 block">
+                        Edit Cart
+                    </a>
+
+                    <div class="my-6 border-t pt-6 space-y-3">
+                        
+                        <div class="flex justify-between text-base">
+                            <span>Subtotal:</span>
+                            <span id="summary-subtotal" class="font-semibold">R0.00</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-base">
+                            <span>Shipping:</span>
+                            <span id="summary-shipping" class="font-semibold text-green-600"></span>
+                        </div>
+                        
+                        <div class="flex justify-between text-base text-gray-500">
+                            <span>VAT (15%):</span>
+                            <span id="summary-tax">R0.00</span>
+                        </div>
+
+                    </div>
+                    
+                    <div class="flex justify-between text-xl font-extrabold border-t pt-4">
+                        <span class="text-primary">Order Total:</span>
+                        <span id="summary-total" class="text-secondary">R0.00</span>
+                    </div>
+
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-6">
+        <div class="container mx-auto px-4 max-w-7xl text-center text-sm">
+            <p>© 2025 Giant Electronics Hub Store Printing And Signage. Secure Checkout.</p>
+        </div>
+    </footer>
+
+    <script>
+        // -----------------------------------------------------------
+        // 1. DYNAMIC CART LOADING SETUP
+        // -----------------------------------------------------------
+        let cart = []; // Initialize as empty. We will load from localStorage.
+        
+        /**
+         * Utility function to save the cart array to local storage.
+         */
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cartItems', JSON.stringify(cart));
+        }
+
+        /**
+         * Attempts to load the cart from local storage.
+         */
+        function loadCartFromLocalStorage() {
+            const storedCart = localStorage.getItem('cartItems');
+            if (storedCart) {
+                try {
+                    cart = JSON.parse(storedCart);
+                } catch (e) {
+                    console.error("Error parsing cart from localStorage:", e);
+                    cart = [];
+                }
+            } 
+        }
+
+        // Call this immediately to load data before initialization starts
+        loadCartFromLocalStorage();
+
+        // -----------------------------------------------------------
+        // 2. EXISTING CHECKOUT LOGIC (Modified to use dynamic 'cart')
+        // -----------------------------------------------------------
+        let currentStep = 1;
+        
+        // --- CONSTANTS & Elements ---
+        const steps = [
+            { id: 'step-1', indicatorId: 'step-1-indicator' },
+            { id: 'step-2', indicatorId: 'step-2-indicator' },
+            { id: 'step-3', indicatorId: 'step-3-indicator' },
+        ];
+        
+        const summaryItemsContainer = document.getElementById('summary-items-container');
+        const summarySubtotalDisplay = document.getElementById('summary-subtotal');
+        const summaryShippingDisplay = document.getElementById('summary-shipping');
+        const summaryTaxDisplay = document.getElementById('summary-tax');
+        const summaryTotalDisplay = document.getElementById('summary-total');
+        const finalTotalButton = document.getElementById('final-total');
+        const shippingMethodRadios = document.querySelectorAll('input[name="shipping-method"]');
+        
+        // --- State Variables ---
+        let subtotal = 0;
+        let shippingCost = 0;
+
+        // --- Utility Functions ---
+
+        /**
+         * Formats a number as South African Rand (ZAR) currency.
+         * @param {number} amount 
+         * @returns {string} Formatted currency string.
+         */
+        const formatter = new Intl.NumberFormat('en-ZA', {
+            style: 'currency',
+            currency: 'ZAR',
+            minimumFractionDigits: 2
+        });
+        
+        // --- Core Checkout Logic ---
+
+        /**
+         * Calculates subtotal, shipping, tax, and total, then updates the Order Summary display.
+         */
+        function calculateTotals() {
+            // Recalculates subtotal based on the currently loaded 'cart'
+            subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            let currentShippingCost = 0;
+            const selectedShipping = document.querySelector('input[name="shipping-method"]:checked');
+            
+            if (selectedShipping) {
+                // Determine base shipping cost from data attribute
+                const baseCost = parseFloat(selectedShipping.getAttribute('data-cost'));
+                
+                if (selectedShipping.value === 'standard') {
+                    // Custom logic for Standard Shipping: FREE if subtotal is R5000+, R150 otherwise.
+                    currentShippingCost = subtotal >= 5000 ? 0.00 : 150.00;
+                } else {
+                    currentShippingCost = baseCost;
+                }
+            }
+            
+            shippingCost = currentShippingCost;
+            
+            const taxRate = 0.15; // 15% VAT
+            const preTaxTotal = subtotal + shippingCost;
+            const taxAmount = preTaxTotal * taxRate;
+            const total = preTaxTotal + taxAmount;
+
+            // Update Summary Display
+            summarySubtotalDisplay.textContent = formatter.format(subtotal);
+            
+            if (shippingCost === 0) {
+                summaryShippingDisplay.textContent = 'FREE';
+                summaryShippingDisplay.classList.add('text-green-600');
+                summaryShippingDisplay.classList.remove('text-secondary');
+            } else {
+                summaryShippingDisplay.textContent = formatter.format(shippingCost);
+                summaryShippingDisplay.classList.remove('text-green-600');
+                summaryShippingDisplay.classList.add('text-secondary');
+            }
+            
+            summaryTaxDisplay.textContent = formatter.format(taxAmount);
+            summaryTotalDisplay.textContent = formatter.format(total);
+            finalTotalButton.textContent = `Place Order (${formatter.format(total)})`;
+        }
+
+        /**
+         * Clears and dynamically populates the Order Summary section with cart items.
+         */
+        function renderSummaryItems() {
+            summaryItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                summaryItemsContainer.innerHTML = '<p class="text-center text-gray-500 italic">Your cart is empty. Please return to the shop to add items.</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'flex items-start space-x-3 pb-3 border-b border-gray-100 last:border-b-0';
+                itemElement.innerHTML = `
+                    <img src="${item.imageUrl}" alt="${item.name}" class="w-12 h-12 object-contain rounded border">
+                    <div class="flex-grow">
+                        <p class="text-sm font-medium line-clamp-1">${item.name}</p>
+                        <p class="text-xs text-gray-500">${item.quantity} x ${formatter.format(item.price)}</p>
+                    </div>
+                    <span class="text-sm font-bold text-text-dark flex-shrink-0">${formatter.format(item.price * item.quantity)}</span>
+                `;
+                summaryItemsContainer.appendChild(itemElement);
+            });
+        }
+        
+        window.nextStep = function(step) {
+            // Basic validation for Step 1
+            if (step === 2) {
+                const requiredFields = ['email', 'first-name', 'address', 'city', 'province', 'zip', 'phone'];
+                let allValid = true;
+                
+                requiredFields.forEach(id => {
+                    const input = document.getElementById(id);
+                    if (!input.value) {
+                        input.style.borderColor = 'red';
+                        allValid = false;
+                    } else {
+                        input.style.borderColor = ''; // Reset on valid
+                    }
+                });
+
+                if (!allValid) {
+                    alert('Please fill in all required contact and shipping details.');
+                    return;
+                }
+            }
+            
+            // Check if cart is empty before proceeding
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add items before checking out.');
+                return;
+            }
+
+            // Move to the next step
+            if (step <= steps.length) {
+                currentStep = step;
+                updateStepDisplay();
+            }
+        }
+        
+        window.prevStep = function(step) {
+            if (step >= 1) {
+                currentStep = step;
+                updateStepDisplay();
+            }
+        }
+
+        function updateStepDisplay() {
+            steps.forEach((step, index) => {
+                const stepElement = document.getElementById(step.id);
+                const indicatorElement = document.getElementById(step.indicatorId);
+                const stepNumber = index + 1;
+
+                if (stepNumber === currentStep) {
+                    stepElement.classList.remove('hidden');
+                    indicatorElement.classList.add('active');
+                    indicatorElement.classList.remove('completed');
+                } else {
+                    stepElement.classList.add('hidden');
+                    indicatorElement.classList.remove('active');
+                    if (stepNumber < currentStep) {
+                        indicatorElement.classList.add('completed');
+                    } else {
+                        indicatorElement.classList.remove('completed');
+                    }
+                }
+            });
+            
+            // Recalculate totals on step change to ensure shipping/totals are correct
+            if (currentStep === 2 || currentStep === 3) {
+                calculateTotals();
+            }
+        }
+        
+        window.placeOrder = function() {
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+            
+            if (!paymentMethod) {
+                alert('Please select a payment method.');
+                return;
+            }
+
+            // Clear the cart on successful order placement
+            cart = [];
+            saveCartToLocalStorage();
+            
+            // Simulate the final order placement
+            console.log('--- ORDER PLACED ---');
+            console.log('Total:', summaryTotalDisplay.textContent);
+
+            // Redirect to a confirmation page (simulated)
+            alert(`Order successfully placed! Total amount: ${summaryTotalDisplay.textContent}. Your cart has been cleared. You will be redirected to the confirmation page.`);
+            
+            // In a real app: window.location.href = 'confirmation.html?orderId=123';
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Render the items that were loaded from localStorage
+            renderSummaryItems();
+            
+            // 2. Calculate initial costs 
+            calculateTotals(); 
+            
+            // 3. Show the correct first step
+            updateStepDisplay(); 
+
+            // 4. Attach listeners to shipping method radios to recalculate totals
+            shippingMethodRadios.forEach(radio => {
+                radio.addEventListener('change', calculateTotals);
+            });
+        });
+    </script>
+</body>
+</html>

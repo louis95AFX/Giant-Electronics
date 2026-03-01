@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giant Electronics Hub Store Printing And Signage | DTF Printers & Vinyl Cutters</title>
+    <meta name="description" content="Giant Electronics Hub Store Printing And Signage, your trusted supplier for high-quality DTF Printers, Vinyl Cutters, sublimation products, and professional printing services. Benefit from special wholesale prices." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+            
+            body {
+                font-family: 'Inter', sans-serif;
+                /* Using a light grey/white background to match the bottom of the flyer */
+                background-color: #f8fafc; 
+            }
+    
+            /* Circuit background effect similar to the image */
+            .circuit-bg {
+                background-color: #1e60c1;
+                background-image: linear-gradient(135deg, #1e60c1 0%, #2b7fff 100%);
+                /* You could add a SVG circuit pattern here as a background-image */
+            }
+    
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            
+            #fab-container.is-open #fab-links {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+    
+            #fab-container.is-open #fab-note {
+                opacity: 1;
+            }
+        </style>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            // The deep vibrant blue from the top section
+                            'primary': '#1e60c1', 
+                            // The lighter blue from the circuit highlights
+                            'primary-light': '#3b82f6',
+                            // The Red/Pink color from the "SERVICES OFFERED" badge
+                            'accent': '#e11d48', 
+                            // The dark text color
+                            'text-dark': '#1f2937',
+                            // White for the bottom section
+                            'surface': '#ffffff',
+                        },
+                        borderRadius: {
+                            'xl': '0.75rem',
+                            '2xl': '1.5rem',
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+<body class="text-text-dark antialiased">
+
+    <div class="bg-gray-900 text-gray-300 text-xs py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+            <a href="/become-a-dealer" class="hover:text-white transition duration-200">
+                Become a Dealer — Get Special Wholesale Prices
+            </a>
+            <div class="space-x-4">
+                <a href="/my-account" class="hover:text-white transition duration-200">My Account</a>
+                <span class="text-gray-500">•</span>
+                <a href="/cart" class="hover:text-white transition duration-200">Cart (<span id="cart-item-count">0</span>)</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-lg sticky top-0 z-20">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl">
+        
+        <a href="/" class="flex items-center space-x-2">
+            <img src="1logo.jpeg" alt="Giant Electronics Hub Store Printing And Signage Logo" class="h-10">
+            <span class="text-primary text-2xl font-extrabold tracking-tight">Giant Electronics Hub Store</span>
+        </a>
+        
+        <div class="flex items-center space-x-4 text-xl">
+            <a href="/cart" class="text-text-dark hover:text-secondary transition duration-200" aria-label="Go to Shopping Cart">
+                🛒
+            </a>
+            
+            <button id="open-login-modal-btn" class="text-text-dark hover:text-secondary transition duration-200" aria-label="Open Login or My Account">
+                👤
+            </button>
+            
+            <div class="border-l pl-4 space-x-4 text-xl hidden sm:flex">
+                <a href="https://facebook.com/Giant Electronics Hub Store" target="_blank" rel="noopener" class="text-gray-500 hover:text-blue-600 transition duration-200" aria-label="Visit our Facebook Page">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/Giant Electronics Hub Store" target="_blank" rel="noopener" class="text-gray-500 hover:text-pink-600 transition duration-200" aria-label="Visit our Instagram Page">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/Giant Electronics Hub Store" target="_blank" rel="noopener" class="text-gray-500 hover:text-red-600 transition duration-200" aria-label="Visit our YouTube Channel">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="login-modal" class="hidden fixed inset-0 z-[100] bg-gray-900 bg-opacity-70 flex items-center justify-center transition-opacity duration-300" aria-modal="true" role="dialog" aria-labelledby="login-title">
+    
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4 transform scale-95 transition-transform duration-300">
+        
+        <div class="flex justify-between items-center mb-6 border-b pb-3">
+            <h3 id="login-title" class="text-2xl font-bold text-primary">Account Login</h3>
+            <button id="close-login-modal-btn" aria-label="Close modal" class="text-gray-400 hover:text-primary transition duration-200 text-xl">
+                &times;
+            </button>
+        </div>
+
+        <form action="/login" method="post">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username / Email</label>
+                <input type="text" id="username" name="username" required 
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary transition duration-200">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input type="password" id="password" name="password" required 
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary transition duration-200">
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-primary text-white py-3 rounded-full font-bold hover:bg-secondary transition duration-300 uppercase shadow-lg">
+                Log In
+            </button>
+        </form>
+
+        <div class="mt-6 text-center text-sm">
+            <a href="/forgot-password" class="text-primary hover:text-secondary transition duration-200">Forgot Password?</a>
+            <span class="text-gray-400 mx-2">|</span>
+            <a href="/register" class="text-primary hover:text-secondary transition duration-200">Create Account</a>
+        </div>
+    </div>
+</div>
+
+    <nav class="bg-primary shadow-inner">
+        <div class="container mx-auto px-4 py-3 max-w-7xl">
+            <div class="flex justify-between md:justify-start items-center">
+                <button id="menu-btn" class="text-white text-lg font-semibold md:hidden flex items-center space-x-2" aria-expanded="false" aria-controls="main-nav-links">
+                    <span>☰ Menu</span>
+                </button>
+
+                <div id="main-nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-8 w-full md:w-auto transition-all duration-300">
+                    <a href="#categories" class="text-white font-medium px-2 py-2 md:py-0 hover:text-secondary transition duration-200">All Categories</a>
+                    <a href="#featured" class="text-white font-medium px-2 py-2 md:py-0 hover:text-secondary transition duration-200">Featured Products</a>
+                    <a href="/services" class="text-white font-medium px-2 py-2 md:py-0 hover:text-secondary transition duration-200">Our Services</a> <a href="/about-us" class="text-white font-medium px-2 py-2 md:py-0 hover:text-secondary transition duration-200">About Us</a>
+                    <a href="#contact" class="text-white font-medium px-2 py-2 md:py-0 hover:text-secondary transition duration-200">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative text-white min-h-[450px] flex items-center justify-center overflow-hidden" role="banner">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="item1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 bg-gray-900/70"></div>
+
+    <div class="relative container mx-auto px-4 py-16 max-w-7xl z-10">
+        <div class="p-8 rounded-xl max-w-3xl backdrop-blur-sm">
+            <h1 class="text-5xl font-extrabold mb-4 leading-tight">
+                Giant Electronics Hub Store Printing And Signage
+            </h1>
+            <p class="text-xl font-light mb-8 opacity-90">
+                Your leading supplier for High-Quality DTF Printers, Vinyl Cutters, 
+                and all professional printing machinery and materials.
+            </p>
+            <a href="shop.html" 
+                class="bg-secondary text-white text-lg font-bold py-3 px-8 rounded-full shadow-xl 
+                        hover:bg-secondary/90 transform hover:scale-105 transition duration-300 uppercase">
+                Explore the Shop
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <main class="container mx-auto px-4 py-12 max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <nav class="categories lg:col-span-1 bg-white p-6 rounded-xl shadow-lg h-fit" id="categories" aria-label="Product Categories">
+                <h3 class="text-2xl font-bold mb-4 text-primary border-b pb-3">Product Categories</h3>
+                <ul class="space-y-2">
+                    <li><a href="shop.html" class="block p-2 rounded-lg text-text-dark font-bold hover:bg-gray-100 hover:text-secondary transition duration-200"> DTF Printers & Systems</a></li>
+                    <li><a href="vinyl.html" class="block p-2 rounded-lg text-text-dark font-bold hover:bg-gray-100 hover:text-secondary transition duration-200"> Vinyl Cutters & Plotters</a></li>
+                    <li class="border-t pt-2 mt-2 border-gray-100"></li>
+                    <li><a href="sub.html" class="block p-2 rounded-lg text-text-dark hover:bg-gray-100 hover:text-secondary transition duration-200">Sublimation Printing Products</a></li>
+                    <li><a href="heat.html" class="block p-2 rounded-lg text-text-dark hover:bg-gray-100 hover:text-secondary transition duration-200">Heat Press Machines</a></li>
+                    <li><a href="personalized.html" class="block p-2 rounded-lg text-text-dark hover:bg-gray-100 hover:text-secondary transition duration-200">Personalized Gift Blanks</a></li>
+                    <li><a href="photo.html" class="block p-2 rounded-lg text-text-dark hover:bg-gray-100 hover:text-secondary transition duration-200">Photo Albums</a></li>
+                    
+                    <li class="border-t pt-3 mt-3 border-gray-200">
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Printing Services</h4>
+                        <ul class="ml-2 space-y-1 text-sm">
+                            <li><a href="/services/tshirt-printing" class="block p-1 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-secondary transition duration-200">T-Shirt Printing</a></li>
+                            <li><a href="/services/laser-engraving" class="block p-1 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-secondary transition duration-200">Laser Engraving</a></li>
+                            <li><a href="/services/mug-printing" class="block p-1 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-secondary transition duration-200">Mug Printing</a></li>
+                            <li><a href="/services/poster-design" class="block p-1 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-secondary transition duration-200">Poster Design & Print</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="featured lg:col-span-3" id="featured" aria-labelledby="featured-heading">
+                <h2 id="featured-heading" class="text-3xl font-bold mb-6 border-b-4 border-secondary pb-2">
+                Featured Products
+                </h2>
+                <div class="product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="bg-primary text-white py-16" id="contact">
+        <div class="container mx-auto px-4 text-center max-w-7xl">
+            <h3 class="text-4xl font-extrabold mb-4">Looking for a Custom Printing Solution?</h3>
+            <p class="text-xl font-light mb-8 opacity-90">
+                Contact us for orders, dealer registration, or special quotes today.
+            </p>
+            <a href="mailto:info@Giant Electronics Hub Store.com" 
+               class="inline-block bg-white text-primary text-lg font-bold py-3 px-8 rounded-full shadow-xl hover:bg-gray-100 transform hover:scale-105 transition duration-300">
+                ✉️ Send an Email
+            </a>
+        </div>
+    </section>
+
+<div id="fab-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+    
+    <div id="fab-links" class="flex flex-col space-y-3 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        
+        <a href="/live-chat" aria-label="Start Live Chat" title="Start Live Chat" 
+           class="w-12 h-12 bg-gray-600 text-white rounded-full shadow-lg flex items-center justify-center text-xl hover:bg-secondary/90 transform hover:scale-105 transition duration-200">
+            <i class="fa-solid fa-comments"></i>
+        </a>
+        <a href="https://tiktok.com/Giant Electronics Hub Store" target="_blank" rel="noopener" aria-label="Visit our TikTok" title="TikTok"
+           class="w-12 h-12 bg-black text-white rounded-full shadow-lg flex items-center justify-center text-xl hover:bg-secondary/90 transform hover:scale-105 transition duration-200">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://instagram.com/Giant Electronics Hub Store" target="_blank" rel="noopener" aria-label="Visit our Instagram" title="Instagram"
+           class="w-12 h-12 bg-pink-500 text-white rounded-full shadow-lg flex items-center justify-center text-xl hover:bg-secondary/90 transform hover:scale-105 transition duration-200">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        
+    </div>
+
+    <span id="fab-note" class="absolute right-full mr-4 bottom-20 bg-primary/90 text-white text-xs px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap 
+                               opacity-0 transition-opacity duration-300 pointer-events-none">
+        Triple click for WhatsApp chat!
+    </span>
+    
+    <button id="main-fab-btn" aria-label="Open communication options menu" 
+           class="w-16 h-16 bg-green-500 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl z-10 transform hover:scale-110 transition duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+</div>
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-extrabold text-white mb-4">
+                        <a href="/">Giant Electronics Hub Store</a>
+                    </h4>
+                    <p class="text-sm">Giant Electronics Hub Store Printing And Signage - your trusted source for DTF Printers, Vinyl Cutters, sublimation products, and professional printing services.</p>
+                </div>
+                <nav aria-label="Footer Navigation">
+                    <h5 class="text-lg font-semibold text-white mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="hover:text-white transition duration-200">Homepage</a></li>
+                        <li><a href="/categories" class="hover:text-white transition duration-200">All Categories</a></li>
+                        <li><a href="/services" class="hover:text-white transition duration-200">Our Services</a></li> <li><a href="/faq" class="hover:text-white transition duration-200">FAQ</a></li>
+                        <li><a href="/contact" class="hover:text-white transition duration-200">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-4">Contact Us</h5>
+                    <p class="text-sm mb-2">📞 Phone: <a href="tel:+27123456789" class="hover:text-white transition duration-200 font-bold">+27 12 345 6789</a></p>
+                    <p class="text-sm">📍 Address: Giant Electronics Hub Store Region, South Africa</p>
+                </div>
+                <form action="/newsletter-signup" method="post" class="newsletter-form">
+                    <h5 class="text-lg font-semibold text-white mb-4">Subscribe to Our Newsletter</h5>
+                    <input type="email" placeholder="Your Email Address" required
+                            class="w-full p-2 mb-3 rounded-lg bg-gray-700 text-white border border-gray-700 focus:ring-secondary focus:border-secondary outline-none">
+                    <button type="submit" class="w-full bg-secondary text-white py-2 rounded-lg font-semibold hover:bg-secondary/90 transition duration-200">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <p class="copyright text-center text-xs pt-4 text-gray-600">
+                © 2025 Giant Electronics Hub Store Printing And Signage. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Product Data (Simulated) - Increased to 12 products
+             const products = [
+             { 
+        id: 28, 
+        name: "Epson L18050 A3", 
+        price: 35999, 
+        imageUrl: 'item1.jpg', 
+        description: "High-quality A3 photo EcoTank printer, popular for photo printing and DTF conversion projects."
+    },
+    { 
+        id: 29, 
+        name: "SET-DTFYAZICI-03 A3 DTF Modifiyeli Tekstil", 
+        price: 54753, 
+        imageUrl: 'item61.jpg', 
+        description: "Complete A3 DTF printer set, pre-modified and optimized for direct textile transfer printing."
+    },
+    { 
+        id: 30, 
+        name: "Epson L8160 Ekotank Wifi Fotokopi Tarayıcı A4", 
+        price: 28599, 
+        imageUrl: 'item2.jpg', 
+        description: "Premium A4 Photo EcoTank All-in-One with Wi-Fi, copy, and scan functions for professional-grade photos."
+    },
+    { 
+        id: 31, 
+        name: "Epson L11050 A3 Wifi ", 
+        price: 23999, 
+        imageUrl: 'item3.jpg', 
+        description: "A3 single-function EcoTank printer with Wi-Fi for efficient, low-cost large-format document printing."
+    },
+    { 
+        id: 32, 
+        name: "Epson L8050 A4", 
+        price: 17999, 
+        imageUrl: 'item4.jpg', 
+        description: "Next-generation A4 6-color EcoTank photo printer, delivering exceptional quality and high ink yield."
+    },
+    { 
+        id: 33, 
+        name: "Epson L3250 Direkwifi", 
+        price: 9505, 
+        imageUrl: 'item5.jpg', 
+        description: "Compact A4 EcoTank All-in-One with Wi-Fi Direct for easy home printing, scanning, and copying."
+    },
+    { 
+        id: 34, 
+        name: "Epson L8180 Ekotank Wifi ", 
+        price: 38999, 
+        imageUrl: 'item6.jpg', 
+        description: "Flagship A3+ Photo EcoTank All-in-One with 6 colors, offering superior photo and document versatility."
+    },
+    { 
+        id: 35, 
+        name: "Epson L805 Mürekkep ", 
+        price: 20700, 
+        imageUrl: 'item7.jpg', 
+        description: "High-yield original replacement ink set for the Epson L805 A4 Photo EcoTank printer."
+    },
+    { 
+        id: 36, 
+        name: "Epson L850", 
+        price: 26194, 
+        imageUrl: 'item8.jpg', 
+        description: "A4 Photo EcoTank All-in-One with 6 colors and LCD screen for direct printing and copying."
+    },
+    { 
+        id: 37, 
+        name: "Epson L1110", 
+        price: 7393, 
+        imageUrl: 'item9.jpg', 
+        description: "Standard A4 EcoTank single-function printer for reliable, high-volume black and color document printing."
+    },
+    { 
+        id: 38, 
+        name: "EPSON L1300 A3", 
+        price: 26954, 
+        imageUrl: 'item10.jpg', 
+        description: "Robust A3+ 4-color EcoTank printer, ideal for high-volume document and engineering printing."
+    },
+    { 
+        id: 39, 
+        name: "Epson L7180 ", 
+        price: 35911, 
+        imageUrl: 'item11.jpg', 
+        description: "A3 Multi-function EcoTank with a 5-color system (including Photo Black) for versatile printing."
+    },
+    { 
+        id: 40, 
+        name: "A4 DTF Printer", 
+        price: 36654, 
+        imageUrl: 'item12.jpg', 
+        description: "General A4 size DTF printer suitable for custom apparel and small promotional items."
+    },
+    { 
+        id: 41, 
+        name: "DTF 30cm Rulo Destekli Otomatik Pet Film Tozlama ve Kurutma Makinesi", 
+        price: 33714, 
+        imageUrl: 'item13.jpg', 
+        description: "Automatic 30cm roll-fed machine for efficient powder application and curing of DTF film."
+    },
+    { 
+        id: 42, 
+        name: "Goldpix Pet Film Kurutma Makinesi", 
+        price: 14786, 
+        imageUrl: 'item14.jpg', 
+        description: "Dedicated curing machine for professionally melting DTF powder onto the transfer film."
+    },
+    { 
+        id: 43, 
+        name: "A3 Basic Modifiyeli DTF Tekstil Baskı Makine Seti", 
+        price: 86389, 
+        imageUrl: 'item15.jpg', 
+        description: "An A3 DTF printer machine set, modified and configured for immediate use in textile printing."
+    },
+             ];
+            
+            const productGrid = document.getElementById('product-grid');
+            const cartItemCount = document.getElementById('cart-item-count');
+            let cartCount = 0; // Initialize cart count
+
+            // --- Utility Functions for Quantity Controls ---
+            function setupQuantityControls() {
+                document.querySelectorAll('.qty-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = e.currentTarget.getAttribute('data-product-id');
+                        const action = e.currentTarget.getAttribute('data-action');
+                        const qtyInput = document.getElementById(`qty-input-${productId}`);
+                        
+                        let currentQty = parseInt(qtyInput.value);
+                        if (isNaN(currentQty)) currentQty = 1;
+
+                        if (action === 'plus') {
+                            currentQty = Math.min(currentQty + 1, 99);
+                        } else if (action === 'minus') {
+                            currentQty = Math.max(currentQty - 1, 1);
+                        }
+                        
+                        qtyInput.value = currentQty;
+                        e.preventDefault(); 
+                    });
+                });
+
+                document.querySelectorAll('input[type="number"]').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        let value = parseInt(e.target.value);
+                        const min = parseInt(e.target.min);
+                        const max = parseInt(e.target.max);
+
+                        if (isNaN(value) || value < min) {
+                            e.target.value = min;
+                        } else if (value > max) {
+                            e.target.value = max;
+                        }
+                    });
+                });
+            }
+
+            // Function to render products
+function renderProducts() {
+    if (!productGrid) return;
+
+    productGrid.innerHTML = ''; // Clear existing content
+
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        // Add cursor-pointer class and event listener for modal
+        productCard.className = 'product-card bg-white p-4 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl hover:scale-[1.01] cursor-pointer'; 
+        
+        const priceFormatted = product.price.toLocaleString('en-ZA', { minimumFractionDigits: 2 });
+        
+        productCard.innerHTML = `
+            <div class="h-[180px] mb-4 overflow-hidden rounded-xl bg-gray-100 flex items-center justify-center group">
+                <img src="${product.imageUrl}" alt="${product.name}" loading="lazy" class="object-contain w-full h-full p-2 transition duration-500 group-hover:scale-105">
+            </div>
+
+            <div class="product-info text-left">
+                <h3 class="text-lg font-semibold mb-2 text-text-dark h-14 overflow-hidden" title="${product.name}">
+                    ${product.name}
+                </h3>
+
+                <p class="text-xl font-extrabold text-secondary mb-3">
+                    R${priceFormatted}
+                </p>
+
+                <div class="flex items-center justify-between mb-4 space-x-2">
+                    <span class="text-sm font-medium text-text-dark">Quantity:</span>
+                    <div class="flex items-center space-x-1">
+                        <button class="qty-btn qty-minus bg-gray-200 text-text-dark hover:bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center font-bold" data-product-id="${product.id}" data-action="minus" aria-label="Decrease quantity">
+                            -
+                        </button>
+                        <input type="number" id="qty-input-${product.id}" value="1" min="1" max="99" 
+                            class="w-12 h-8 text-center border border-gray-300 rounded-lg text-sm font-medium focus:ring-secondary focus:border-secondary outline-none p-0"
+                            aria-label="Item quantity">
+                        <button class="qty-btn qty-plus bg-gray-200 text-text-dark hover:bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center font-bold" data-product-id="${product.id}" data-action="plus" aria-label="Increase quantity">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-btn w-full bg-primary text-white py-2.5 rounded-full font-bold hover:bg-secondary transition duration-200 uppercase flex items-center justify-center space-x-2" 
+                        data-product-id="${product.id}"
+                        onclick="event.stopPropagation();"> <span>Add to Cart</span> 
+                </button>
+            </div>
+        `;
+        
+        // 🛑 NEW: Add event listener to open modal on card click
+        productCard.addEventListener('click', () => {
+            showProductModal(product);
+        });
+
+        productGrid.appendChild(productCard);
+    });
+
+    // ... (Rest of your existing code for setupQuantityControls and Add to Cart listeners)
+    
+    // Attach quantity control logic
+    setupQuantityControls();
+
+    // Add event listeners for 'Add to Cart' buttons (Ensure the event listener below also uses e.stopPropagation())
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            // e.stopPropagation() is already handled by the onclick attribute above, but this is a good safety check:
+            // e.stopPropagation(); 
+            
+            const targetButton = e.target.closest('.add-to-cart-btn');
+            const productId = targetButton.getAttribute('data-product-id');
+            const qtyInput = document.getElementById(`qty-input-${productId}`);
+            const quantity = parseInt(qtyInput.value) || 1;
+            
+            // Simulate cart addition
+            cartCount += quantity;
+            cartItemCount.textContent = cartCount;
+            
+            // Visual feedback
+            targetButton.innerHTML = `<span>Added ${quantity}! 👍</span>`;
+            targetButton.classList.remove('bg-primary', 'hover:bg-secondary');
+            targetButton.classList.add('bg-green-600', 'hover:bg-green-700');
+            setTimeout(() => {
+                targetButton.innerHTML = '<span>Add to Cart</span>';
+                targetButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+                targetButton.classList.add('bg-primary', 'hover:bg-secondary');
+            }, 1500);
+        });
+    });
+}
+
+// --- Modal Display Function ---
+function showProductModal(product) {
+    // 1. Get the modal elements (assuming you have the HTML structure below)
+    const modal = document.getElementById('product-modal');
+    const modalContent = document.getElementById('modal-details');
+    
+    // 2. Format the price
+    const priceFormatted = product.price.toLocaleString('en-ZA', { minimumFractionDigits: 2 });
+
+    // 3. Populate the modal with the product details
+    // **KEY CHANGE HERE**: We access 'product.description' directly.
+    modalContent.innerHTML = `
+        <div class="md:flex">
+            <div class="md:w-1/2 p-4">
+                <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-auto rounded-xl object-cover shadow-lg">
+            </div>
+            <div class="md:w-1/2 p-4">
+                <h2 class="text-3xl font-bold mb-4 text-text-dark">${product.name}</h2>
+                <p class="text-2xl font-extrabold text-secondary mb-6">
+                    R${priceFormatted}
+                </p>
+                <p class="text-gray-700 mb-6">${product.description || 'Description not available.'}</p> 
+                <div class="flex items-center space-x-4 mb-6">
+                    </div>
+
+                <button class="w-full bg-primary text-white py-3 rounded-full font-bold hover:bg-secondary transition duration-200 uppercase" data-product-id="${product.id}">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    `;
+    // 4. Show the modal
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden'); // Prevent background scrolling
+}
+
+// Function to hide the modal
+// Function to hide the modal
+function hideProductModal() {
+    const modal = document.getElementById('product-modal'); 
+    
+    // Check if the modal element exists before trying to manipulate its classes
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    } else {
+        console.error("Error: 'product-modal' element not found during close attempt.");
+    }
+}
+
+// Listener to close the modal when clicking outside (on the overlay)
+// This script block should be placed after the modal HTML block.
+document.getElementById('product-modal').addEventListener('click', (e) => {
+    // Only close if the direct target is the backdrop (the element with the ID 'product-modal')
+    if (e.target.id === 'product-modal') {
+        hideProductModal();
+    }
+});
+
+            // 2. Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const navLinks = document.getElementById('main-nav-links');
+
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', () => {
+                    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                    
+                    navLinks.classList.toggle('hidden');
+                    
+                    if (navLinks.classList.contains('hidden')) {
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                        menuBtn.querySelector('span').textContent = '☰ Menu';
+                    } else {
+                        menuBtn.setAttribute('aria-expanded', 'true');
+                        menuBtn.querySelector('span').textContent = '✕ Close';
+                        navLinks.classList.add('absolute', 'top-full', 'left-0', 'bg-primary', 'p-4', 'shadow-2xl');
+                    }
+                });
+
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 768) {
+                            navLinks.classList.add('hidden');
+                            menuBtn.setAttribute('aria-expanded', 'false');
+                            menuBtn.querySelector('span').textContent = '☰ Menu';
+                        }
+                    });
+                });
+            }
+
+            // Initialize the product rendering
+            renderProducts();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        // ... existing product rendering and mobile menu JS ...
+
+        // --- NEW FAB Logic (Click-to-Open and Double-Click-to-Chat) ---
+        const mainFabBtn = document.getElementById('main-fab-btn');
+        const fabContainer = document.getElementById('fab-container');
+        
+        // State variables for double-click logic
+        let fabClickCount = 0;
+        let clickTimeout = null;
+        const whatsappNumber = "+27 68 679 7424"; 
+
+        if (mainFabBtn && fabContainer) {
+            mainFabBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevents immediate closing if clicked near the edge
+                
+                fabClickCount++;
+
+                if (fabClickCount === 1) {
+                    // --- First Click: Toggle Menu ---
+                    fabContainer.classList.toggle('is-open');
+
+                    if (fabContainer.classList.contains('is-open')) {
+                        // Menu is open: Set up listener to close it on outside click
+                        document.addEventListener('click', closeFabMenu);
+                        
+                        // Set timeout to reset click count if no second click occurs soon
+                        clickTimeout = setTimeout(() => {
+                            fabClickCount = 0;
+                        }, 300); // 300ms window for double-click
+                    } else {
+                        // Menu is closed: Clear the timeout and reset count
+                        clearTimeout(clickTimeout);
+                        fabClickCount = 0;
+                        document.removeEventListener('click', closeFabMenu);
+                    }
+
+                } else if (fabClickCount === 2) {
+                    // --- Second Click: Open WhatsApp Chat ---
+                    clearTimeout(clickTimeout); // Prevent timeout from resetting the count
+                    fabClickCount = 0; // Reset count immediately
+                    
+                    // Close the menu if it was open before navigating
+                    fabContainer.classList.remove('is-open');
+                    document.removeEventListener('click', closeFabMenu);
+
+                    // Redirect to WhatsApp
+                    window.open(`https://wa.me/${whatsappNumber.replace(/\s/g, '')}`, '_blank');
+                }
+            });
+        }
+
+        // Function to close the FAB menu when clicking outside
+        function closeFabMenu(event) {
+            // Check if the click occurred outside the FAB container
+            if (!fabContainer.contains(event.target) && fabContainer.classList.contains('is-open')) {
+                fabContainer.classList.remove('is-open');
+                document.removeEventListener('click', closeFabMenu);
+                fabClickCount = 0; // Reset click count on closing
+                clearTimeout(clickTimeout);
+            }
+        }
+        
+        // ... rest of the existing script content (renderProducts, mobile menu toggle) ...
+        
+        // Initialize the product rendering
+        // NOTE: This call is redundant if the previous DOMContentLoaded block already ran it. 
+        // We ensure it runs once by wrapping it in the first block or commenting out this one.
+        // renderProducts(); 
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+        // ... existing JavaScript code (product rendering, mobile menu, FAB logic) ...
+
+        // --- NEW MODAL Logic ---
+        const openModalBtn = document.getElementById('open-login-modal-btn');
+        const closeModalBtn = document.getElementById('close-login-modal-btn');
+        const loginModal = document.getElementById('login-modal');
+        const modalContent = loginModal.querySelector('.max-w-md'); // Used for clicking outside
+
+        // Function to open the modal
+        function openModal() {
+            loginModal.classList.remove('hidden');
+            // Remove the body scrollbar when modal is open
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            loginModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrollbar
+        }
+
+        // Event Listeners
+        if (openModalBtn && closeModalBtn && loginModal) {
+            // Open modal when account button is clicked
+            openModalBtn.addEventListener('click', openModal);
+
+            // Close modal when X button is clicked
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Close modal when user clicks on the backdrop (outside the content)
+            loginModal.addEventListener('click', (event) => {
+                if (event.target === loginModal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal when the ESC key is pressed
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !loginModal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        }
+        
+        // ... rest of the existing script content (FAB logic, renderProducts, mobile menu toggle) ...
+        
+        // Ensure this is still at the end:
+        // renderProducts(); // Commented out to prevent double execution if previous block ran it.
+        });
+
+        
+        function hideProductModal() {
+        // 1. Get the modal element by its ID
+        const modal = document.getElementById('product-modal'); 
+        
+        // 2. Add the 'hidden' class back to hide it (Tailwind CSS)
+        modal.classList.add('hidden');
+        
+        // 3. Remove the class that prevents background scrolling
+        document.body.classList.remove('overflow-hidden');
+    }
+    </script>
+
+<div id="product-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+    
+    <div class="bg-white rounded-3xl shadow-3xl max-w-4xl w-full mx-4 my-8 relative transform transition-all duration-300 scale-100">
+        
+        <button id="modal-close-btn" onclick="hideProductModal()" 
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 transition duration-200" 
+                aria-label="Close modal">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <div id="modal-details" class="p-6 md:p-10">
+            </div>
+
+    </div>
+</div>
+</body>
+</html>
