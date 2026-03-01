@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Albums & Memory Books - Giant Electronics Hub Store Printing And Signage</title>
+    <meta name="description" content="Shop a wide range of blank photo albums and memory books, including sublimation covers and personalized scrapbooking supplies." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2D324A', // Dark blue/grey from the logo
+                        'secondary': '#F48E2E', // Orange from the logo
+                        'text-dark': '#212529',
+                    },
+                    borderRadius: {
+                        'xl': '0.75rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-text-dark antialiased">
+
+    <div class="bg-gray-900 text-gray-300 text-xs py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+            <a href="/become-a-dealer" class="hover:text-white transition duration-200">
+                Become a Dealer — Get Special Wholesale Prices
+            </a>
+            <div class="space-x-4">
+                <a href="/my-account" class="hover:text-white transition duration-200">My Account</a>
+                <span class="text-gray-500">•</span>
+                <a href="/cart" class="hover:text-white transition duration-200">Cart (<span id="cart-item-count">0</span>)</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-lg sticky top-0 z-20">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl">
+            
+            <a href="/" class="flex items-center space-x-2">
+                <img src="logo.jpg" alt="Giant Electronics Hub Store Printing And Signage Logo" class="h-10">
+                <span class="text-primary text-2xl font-extrabold tracking-tight">Giant Electronics Hub Store</span>
+            </a>
+
+            <form id="header-search-form" action="/search" method="get" class="flex flex-grow max-w-2xl w-full md:w-auto bg-gray-100 rounded-full overflow-hidden shadow-inner transition duration-300 focus-within:ring-4 focus-within:ring-secondary/50">
+    
+    <label for="search-input-main" class="sr-only">Search Products</label>
+    
+    <input type="text" id="search-input-main" name="q" placeholder="Search photo albums, memory books, covers, or inserts..." aria-label="Search box"
+            class="flex-grow py-3 px-5 text-base bg-transparent border-none outline-none focus:ring-0 placeholder-gray-500">
+    
+    <button type="submit" aria-label="Start Search"
+            class="flex items-center justify-center bg-primary text-white w-12 h-12 rounded-full m-1 ml-0 font-semibold hover:bg-secondary/90 transition duration-200 shadow-md">
+        🔍
+    </button>
+    
+</form>
+
+            <div class="flex items-center space-x-4 text-xl">
+                <a href="/cart" class="text-text-dark hover:text-secondary transition duration-200" aria-label="Go to Shopping Cart">
+                    🛒
+                </a>
+                <div class="border-l pl-4 space-x-4 text-xl hidden sm:flex">
+    <a href="https://facebook.com/Giant Electronics Hub Store" target="_blank" rel="noopener" class="text-gray-500 hover:text-blue-600 transition duration-200" aria-label="Visit our Facebook Page">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://instagram.com/Giant Electronics Hub Store" target="_blank" rel="noopener" class="text-gray-500 hover:text-pink-600 transition duration-200" aria-label="Visit our Instagram Page">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://youtube.com/Giant Electronics Hub Store" target="_blank" rel="noopener" class="text-gray-500 hover:text-red-600 transition duration-200" aria-label="Visit our YouTube Channel">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-primary shadow-inner">
+        <div class="container mx-auto px-4 py-3 max-w-7xl">
+            <div class="flex justify-start items-center space-x-8">
+                <a href="index.html" class="text-white font-medium hover:text-secondary transition duration-200">Homepage</a>
+                <a href="/about-us" class="text-white font-medium hover:text-secondary transition duration-200">About Us</a>
+                <a href="/contact" class="text-white font-medium hover:text-secondary transition duration-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-12 max-w-7xl" id="shop">
+        <h1 class="text-4xl font-extrabold mb-8 text-primary">Photo Albums & Memory Books</h1>
+        <p class="mb-8 text-lg text-gray-600">Discover quality Photo Albums and Memory Books perfect for creating cherished keepsakes. We offer standard albums, albums with printable covers, and scrapbooking essentials.</p>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <aside class="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg h-fit border border-gray-100">
+                <h2 class="text-2xl font-bold mb-6 text-primary border-b pb-3">Filter & Sort</h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">Sort By Price</h3>
+                    <select id="price-sort" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary transition filter-control">
+                        <option value="default">Default (Recommended)</option>
+                        <option value="low-to-high">Price: Low to High</option>
+                        <option value="high-to-low">Price: High to Low</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">Price Range</h3>
+                    <div class="flex items-center space-x-2 text-sm">
+                        <span class="font-bold text-secondary">R0</span>
+                        <input type="range" id="price-range" min="0" max="1500" value="1500" step="10" class="flex-grow accent-primary cursor-pointer filter-control">
+                        <span class="font-bold text-secondary">R<span id="max-price-display">1,500</span>+</span>
+                    </div>
+                </div>
+                
+                <button id="apply-filters-btn" class="w-full bg-secondary text-white py-2 rounded-lg font-bold hover:bg-secondary/90 transition duration-200">
+                    Apply Filters
+                </button>
+            </aside>
+
+            <section class="lg:col-span-3" aria-labelledby="product-grid-heading">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 id="product-grid-heading" class="text-xl font-semibold text-text-dark">Showing <span id="product-count">0</span> Photo Albums</h2>
+                </div>
+                
+                <div class="product-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6" id="product-grid">
+                    </div>
+                
+                <div id="no-results" class="hidden text-center p-12 bg-white rounded-xl shadow-md border border-gray-100 mt-8">
+                    <p class="text-2xl text-gray-600 font-medium">😔 No photo albums found matching your criteria.</p>
+                    <p class="mt-2 text-gray-500">Try adjusting your filters or price range.</p>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-extrabold text-white mb-4">
+                        <a href="/">Giant Electronics Hub Store</a>
+                    </h4>
+                    <p class="text-sm">Giant Electronics Hub Store Printing And Signage - your trusted source for printing machines, sublimation products, and personalized gifts.</p>
+                </div>
+                <nav aria-label="Footer Navigation">
+                    <h5 class="text-lg font-semibold text-white mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="hover:text-white transition duration-200">Homepage</a></li>
+                        <li><a href="/categories" class="hover:text-white transition duration-200">All Categories</a></li>
+                        <li><a href="/faq" class="hover:text-white transition duration-200">FAQ</a></li>
+                        <li><a href="/contact" class="hover:text-white transition duration-200">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-4">Contact Us</h5>
+                    <p class="text-sm mb-2">📞 Phone: <a href="tel:+27123456789" class="hover:text-white transition duration-200 font-bold">+27 12 345 6789</a></p>
+                    <p class="text-sm">📍 Address: Giant Electronics Hub Store Region, South Africa</p>
+                </div>
+                <form action="/newsletter-signup" method="post" class="newsletter-form">
+                    <h5 class="text-lg font-semibold text-white mb-4">Subscribe to Our Newsletter</h5>
+                    <input type="email" placeholder="Your Email Address" required
+                           class="w-full p-2 mb-3 rounded-lg bg-gray-700 text-white border border-gray-700 focus:ring-secondary focus:border-secondary outline-none">
+                    <button type="submit" class="w-full bg-secondary text-white py-2 rounded-lg font-semibold hover:bg-secondary/90 transition duration-200">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <p class="copyright text-center text-xs pt-4 text-gray-600">
+                © 2025 Giant Electronics Hub Store Printing And Signage. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Data structure focuses on Photo Albums
+        const ALL_PRODUCTS = [
+            { id: 601, name: "A4 Sublimation Photo Album (Linen Cover)", price: 210.00, category: 'Sublimation Albums', imageUrl: 'sublimation_album_a4.webp' },
+            { id: 602, name: "6x4 Slip-in Album (300 Photos - Black)", price: 145.00, category: 'Traditional Albums', imageUrl: 'traditional_album_300.webp' },
+            { id: 603, name: "Photo Album with Printable Wood Cover (20 Pages)", price: 250.00, category: 'Sublimation Albums', imageUrl: 'wood_cover_album.webp' },
+            { id: 604, name: "Baby Memory Scrapbook (Blank Pages)", price: 180.00, category: 'Memory Books', imageUrl: 'baby_memory_book.webp' },
+            { id: 605, name: "A5 Spiral Photo Album (Clear Cover - 40 Pages)", price: 95.00, category: 'Traditional Albums', imageUrl: 'spiral_album_a5.webp' },
+            { id: 606, name: "Wedding Guest Book / Photo Album Combo", price: 320.00, category: 'Event Albums', imageUrl: 'wedding_album_guest.webp' },
+            { id: 607, name: "Sublimation Hard Cover Blank (for A5 Book Binding)", price: 85.00, category: 'Sublimation Blanks', imageUrl: 'hard_cover_blank.webp' },
+            { id: 608, name: "Black Card Photo Album Pages (A4 - 50 Sheets)", price: 70.00, category: 'Album Supplies', imageUrl: 'black_pages_a4.webp' },
+            { id: 609, name: "Photo Corner Stickers (Metallic Gold - 250 Pcs)", price: 45.00, category: 'Album Supplies', imageUrl: 'photo_corner_stickers.webp' },
+            { id: 610, name: "Self-Adhesive Magnetic Album Pages (5 Sets)", price: 199.00, category: 'Traditional Albums', imageUrl: 'magnetic_album_pages.webp' },
+            { id: 611, name: "PU Leather Photo Album Cover (A4 - Bulk 5 Pack)", price: 650.00, category: 'Sublimation Albums', imageUrl: 'pu_leather_album_bulk.webp' },
+            { id: 612, name: "Kids' Photo Journal (Soft Cover - 60 Pages)", price: 110.00, category: 'Memory Books', imageUrl: 'kids_photo_journal.webp' },
+        ];
+        
+        const productGrid = document.getElementById('product-grid');
+        const cartItemCount = document.getElementById('cart-item-count');
+        const productCountDisplay = document.getElementById('product-count');
+        const noResultsMessage = document.getElementById('no-results');
+        const priceRangeInput = document.getElementById('price-range');
+        const maxPriceDisplay = document.getElementById('max-price-display');
+
+        let cartCount = 0; // Initialize cart count
+
+        // Renders a list of products to the main grid
+        function renderProducts(productsToRender) {
+            productGrid.innerHTML = ''; // Clear existing products
+            
+            if (productsToRender.length === 0) {
+                noResultsMessage.classList.remove('hidden');
+                productCountDisplay.textContent = 0;
+            } else {
+                noResultsMessage.classList.add('hidden');
+            }
+
+            productsToRender.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card bg-white p-4 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl hover:scale-[1.01]';
+    
+    // * Currency symbol is R (Rands) *
+    productCard.innerHTML = `
+        <div class="h-[180px] mb-4 overflow-hidden rounded-xl bg-gray-100 flex items-center justify-center">
+             <img src="${product.imageUrl}" alt="${product.name}" loading="lazy" class="object-contain w-full h-full p-2 transition duration-500 group-hover:scale-105">
+        </div>
+        
+        <div class="product-info text-left">
+            <h3 class="text-lg font-semibold mb-2 truncate text-text-dark" title="${product.name}">
+                <a href="/product/${product.id}" class="hover:text-primary transition duration-200">${product.name}</a>
+            </h3>
+            
+            <p class="text-xl font-extrabold text-secondary mb-3">
+                R${product.price.toFixed(2)}
+            </p>
+            
+            <button class="add-to-cart-btn w-full bg-primary text-white py-2.5 rounded-full font-bold hover:bg-secondary transition duration-200 uppercase flex items-center justify-center space-x-2" data-product-id="${product.id}">
+                <span>Add to Cart</span> 
+            </button>
+        </div>
+    `;
+    productGrid.appendChild(productCard);
+});
+            productCountDisplay.textContent = productsToRender.length;
+            setupAddToCartListeners();
+        }
+
+        // Sets up 'Add to Cart' button functionality
+        function setupAddToCartListeners() {
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    cartCount++;
+                    cartItemCount.textContent = cartCount;
+                    e.target.textContent = 'Added! 👍';
+                    e.target.classList.remove('bg-primary', 'hover:bg-primary/90');
+                    e.target.classList.add('bg-green-600', 'hover:bg-green-700');
+                    setTimeout(() => {
+                        e.target.textContent = 'Add to Cart';
+                        e.target.classList.remove('bg-green-600', 'hover:bg-green-700');
+                        e.target.classList.add('bg-primary', 'hover:bg-primary/90');
+                    }, 1500);
+                });
+            });
+        }
+        
+        // Main function to read filters and re-render products
+        window.applyFilters = function() {
+            let filteredProducts = [...ALL_PRODUCTS]; // Start with all products
+            
+            // --- 1. Text Search Filtering ---
+            const searchQueryInput = document.getElementById('search-input-main');
+            const searchQuery = searchQueryInput ? searchQueryInput.value.toLowerCase().trim() : '';
+            
+            if (searchQuery) {
+                filteredProducts = filteredProducts.filter(p => 
+                    p.name.toLowerCase().includes(searchQuery)
+                );
+            }
+
+            // --- 2. Category Filtering (Implicitly filtered to Photo Albums only) ---
+
+            // --- 3. Price Range Filtering ---
+            // Max price range updated to 1500 in HTML
+            const maxPrice = parseFloat(priceRangeInput.value);
+            if (maxPrice < 1500) { 
+                filteredProducts = filteredProducts.filter(p => p.price <= maxPrice);
+            }
+            
+            // --- 4. Sorting ---
+            const sortOrder = document.getElementById('price-sort').value;
+            if (sortOrder === 'low-to-high') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortOrder === 'high-to-low') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            }
+
+            renderProducts(filteredProducts);
+        }
+        
+        // Initialize filtering and set up listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial render of all products
+            renderProducts(ALL_PRODUCTS);
+            
+            // --- Instant Filtering Setup ---
+
+            // 1. Link price range slider to display AND trigger instant filter
+            priceRangeInput.addEventListener('input', (e) => {
+                const rangeValue = parseInt(e.target.value);
+                maxPriceDisplay.textContent = rangeValue.toLocaleString(); // Format number for display
+                if (rangeValue === 1500) {
+                    maxPriceDisplay.textContent = '1,500+';
+                }
+                applyFilters(); // Instant filter on drag/change
+            });
+            
+            // Set initial display for max price
+            maxPriceDisplay.textContent = '1,500+';
+
+            // 2. Trigger filter on Sort dropdown change
+            document.getElementById('price-sort').addEventListener('change', applyFilters);
+
+            // 3. Bind the "Apply Filters" button explicitly
+            document.getElementById('apply-filters-btn').addEventListener('click', applyFilters);
+
+
+            // --- Search Functionality Setup ---
+
+            // 4. Handle the Header Search form submission
+            const headerSearchForm = document.getElementById('header-search-form');
+            if (headerSearchForm) {
+                headerSearchForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Stop the default page reload
+                    applyFilters();
+                });
+            }
+
+            // 5. Optionally, bind instant filtering to search input on keyup (for fast typing feedback)
+            document.getElementById('search-input-main').addEventListener('keyup', applyFilters);
+        });
+    </script>
+</body>
+</html>
